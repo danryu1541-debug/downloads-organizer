@@ -1,0 +1,19 @@
+{
+  "initialSeconds": 0,
+  "maxSeconds": 21600,
+  "overlayTitle": "Costume Timer",
+  "showMilliseconds": false,
+  "timers": {
+    "pig": {
+      "label": "돼지 의상"
+    },
+    "boar": {
+      "label": "멧돼지 의상"
+    }
+  },
+  "roulette": {
+    "addAmount": 3900,
+    "subtractAmount": 4000,
+    "optionsSeconds": [1200, 1800]
+  }
+}

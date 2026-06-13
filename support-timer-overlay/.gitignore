@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+server/data/tokens.json
+server/data/*.tmp
+npm-debug.log*
+dev-server*.log
