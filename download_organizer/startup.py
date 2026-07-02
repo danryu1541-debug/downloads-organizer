@@ -11,10 +11,9 @@ RUN_KEY = r"Software\Microsoft\Windows\CurrentVersion\Run"
 
 
 def build_startup_command() -> str:
-    pythonw = Path(sys.executable).with_name("pythonw.exe")
-    executable = pythonw if pythonw.exists() else Path(sys.executable)
-    script = Path(__file__).resolve().parent.parent / "run_background.pyw"
-    return f'"{executable}" "{script}"'
+    executable = Path(sys.executable)
+    script = Path(__file__).resolve().parent.parent / "downloads_organizer.py"
+    return f'"{executable}" "{script}" run'
 
 
 def enable_startup() -> None:
@@ -42,4 +41,3 @@ def is_startup_enabled() -> bool:
             return True
     except FileNotFoundError:
         return False
-
