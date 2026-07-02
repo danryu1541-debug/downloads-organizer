@@ -12,8 +12,11 @@ RUN_KEY = r"Software\Microsoft\Windows\CurrentVersion\Run"
 
 def build_startup_command() -> str:
     executable = Path(sys.executable)
-    script = Path(__file__).resolve().parent.parent / "downloads_organizer.py"
-    return f'"{executable}" "{script}" run'
+    windowless_executable = executable.with_name("pythonw.exe")
+    if not windowless_executable.exists():
+        windowless_executable = executable
+    script = Path(__file__).resolve().parent.parent / "run_background.pyw"
+    return f'"{windowless_executable}" "{script}"'
 
 
 def enable_startup() -> None:
