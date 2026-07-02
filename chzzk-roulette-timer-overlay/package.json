@@ -1,0 +1,17 @@
+{
+  "name": "chzzk-roulette-timer-overlay",
+  "version": "1.0.0",
+  "description": "OBS browser overlay roulette timers for Chzzk donation events.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:local": "set HOST=127.0.0.1&& node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check src/storage.js && node --check src/roulette.js && node --check src/timers.js && node --check src/chzzk.js && node --check public/client.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}

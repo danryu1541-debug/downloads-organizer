@@ -1,0 +1,73 @@
+{
+  "currency": "KRW",
+  "maxRecentResults": 12,
+  "overlayOptions": {
+    "width": 820,
+    "height": 80,
+    "opacity": 88,
+    "fontScale": 95,
+    "showRecentByDefault": false
+  },
+  "donationRules": {
+    "3900": {
+      "name": "3,900원 1회 증가 룰렛",
+      "rolls": 1,
+      "table": [
+        { "label": "아이고감사합니다", "weight": 49, "target": "boar", "action": "add", "seconds": 0 },
+        { "label": "돼지 20분", "weight": 20, "target": "pig", "action": "add", "seconds": 1200 },
+        { "label": "멧돼지 20분", "weight": 14.4, "target": "boar", "action": "add", "seconds": 1200 },
+        { "label": "돼지 40분", "weight": 7, "target": "pig", "action": "add", "seconds": 2400 },
+        { "label": "멧돼지 40분", "weight": 6, "target": "boar", "action": "add", "seconds": 2400 },
+        { "label": "돼지 1시간", "weight": 2, "target": "pig", "action": "add", "seconds": 3600 },
+        { "label": "멧돼지 1시간", "weight": 1, "target": "boar", "action": "add", "seconds": 3600 },
+        { "label": "돼지 5시간", "weight": 0.1, "target": "pig", "action": "add", "seconds": 18000 },
+        { "label": "바니걸 10분", "weight": 0.5, "target": "boar", "action": "add", "seconds": 0 }
+      ]
+    },
+    "4000": {
+      "name": "4,000원 1회 감소 룰렛",
+      "rolls": 1,
+      "table": [
+        { "label": "정말루고맙습니다", "weight": 49, "target": "boar", "action": "add", "seconds": 0 },
+        { "label": "-돼지 20분", "weight": 20, "target": "pig", "action": "subtract", "seconds": 1200 },
+        { "label": "-멧돼지 20분", "weight": 14.4, "target": "boar", "action": "subtract", "seconds": 1200 },
+        { "label": "-돼지 40분", "weight": 7, "target": "pig", "action": "subtract", "seconds": 2400 },
+        { "label": "-멧돼지 40분", "weight": 6, "target": "boar", "action": "subtract", "seconds": 2400 },
+        { "label": "-돼지 1시간", "weight": 2, "target": "pig", "action": "subtract", "seconds": 3600 },
+        { "label": "-멧돼지 1시간", "weight": 1, "target": "boar", "action": "subtract", "seconds": 3600 },
+        { "label": "-돼지 3시간", "weight": 0.5, "target": "pig", "action": "subtract", "seconds": 10800 },
+        { "label": "-돼지 5시간", "weight": 0.1, "target": "pig", "action": "subtract", "seconds": 18000 }
+      ]
+    },
+    "39000": {
+      "name": "39,000원 10회 증가 룰렛",
+      "rolls": 10,
+      "table": [
+        { "label": "아이고감사합니다", "weight": 49, "target": "boar", "action": "add", "seconds": 0 },
+        { "label": "돼지 20분", "weight": 20, "target": "pig", "action": "add", "seconds": 1200 },
+        { "label": "멧돼지 20분", "weight": 14.4, "target": "boar", "action": "add", "seconds": 1200 },
+        { "label": "돼지 40분", "weight": 7, "target": "pig", "action": "add", "seconds": 2400 },
+        { "label": "멧돼지 40분", "weight": 6, "target": "boar", "action": "add", "seconds": 2400 },
+        { "label": "돼지 1시간", "weight": 2, "target": "pig", "action": "add", "seconds": 3600 },
+        { "label": "멧돼지 1시간", "weight": 1, "target": "boar", "action": "add", "seconds": 3600 },
+        { "label": "돼지 5시간", "weight": 0.1, "target": "pig", "action": "add", "seconds": 18000 },
+        { "label": "바니걸 10분", "weight": 0.5, "target": "boar", "action": "add", "seconds": 0 }
+      ]
+    },
+    "40000": {
+      "name": "40,000원 10회 감소 룰렛",
+      "rolls": 10,
+      "table": [
+        { "label": "정말루고맙습니다", "weight": 49, "target": "boar", "action": "add", "seconds": 0 },
+        { "label": "-돼지 20분", "weight": 20, "target": "pig", "action": "subtract", "seconds": 1200 },
+        { "label": "-멧돼지 20분", "weight": 14.4, "target": "boar", "action": "subtract", "seconds": 1200 },
+        { "label": "-돼지 40분", "weight": 7, "target": "pig", "action": "subtract", "seconds": 2400 },
+        { "label": "-멧돼지 40분", "weight": 6, "target": "boar", "action": "subtract", "seconds": 2400 },
+        { "label": "-돼지 1시간", "weight": 2, "target": "pig", "action": "subtract", "seconds": 3600 },
+        { "label": "-멧돼지 1시간", "weight": 1, "target": "boar", "action": "subtract", "seconds": 3600 },
+        { "label": "-돼지 3시간", "weight": 0.1, "target": "pig", "action": "subtract", "seconds": 10800 },
+        { "label": "-돼지 5시간", "weight": 0.5, "target": "pig", "action": "subtract", "seconds": 18000 }
+      ]
+    }
+  }
+}

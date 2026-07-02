@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chzzk Roulette Timer Overlay</title>
+    <link rel="stylesheet" href="/overlay.css" />
+  </head>
+  <body class="overlay-page">
+    <main class="overlay-shell">
+      <section class="timer-stack" aria-label="타이머">
+        <section class="timer-panel boar" data-timer="boar">
+          <div class="timer-label">
+            <span>멧돼지 시간</span>
+          </div>
+          <div class="timer-value" data-time>00:00</div>
+        </section>
+
+        <section class="timer-panel pig" data-timer="pig">
+          <div class="timer-label">
+            <span>돼지 시간</span>
+          </div>
+          <div class="timer-value" data-time>00:00</div>
+        </section>
+      </section>
+
+      <aside class="result-drawer is-collapsed" data-result-drawer>
+        <button class="drawer-toggle" type="button" data-drawer-toggle aria-expanded="false">
+          <span class="toggle-icon">◀</span>
+          <span class="toggle-text">최근 룰렛</span>
+        </button>
+
+        <section class="result-panel" aria-label="최근 룰렛 결과">
+          <div class="result-title">최근 룰렛</div>
+          <div class="result-main" data-recent-main>아직 룰렛 결과가 없습니다.</div>
+          <ul class="result-list" data-recent-list></ul>
+        </section>
+      </aside>
+    </main>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>
