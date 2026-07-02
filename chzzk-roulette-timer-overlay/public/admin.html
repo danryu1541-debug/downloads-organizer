@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roulette Timer Admin</title>
+    <link rel="stylesheet" href="/admin.css" />
+  </head>
+  <body class="admin-page">
+    <header class="topbar">
+      <div>
+        <h1>치지직 후원 룰렛 타이머</h1>
+        <p>테스트 후원, 타이머, 오버레이, 금액별 룰렛 확률표를 관리합니다.</p>
+      </div>
+      <a href="/overlay" target="_blank">오버레이 열기</a>
+    </header>
+
+    <main class="layout">
+      <section class="panel timers">
+        <h2>타이머 제어</h2>
+        <div class="timer-grid">
+          <article class="timer-card" data-timer="boar">
+            <div class="timer-card-head">
+              <strong>멧돼지</strong>
+              <span data-status>STOP</span>
+            </div>
+            <div class="timer-number" data-time>00:00</div>
+            <div class="button-row">
+              <button data-target="boar" data-command="start">시작</button>
+              <button data-target="boar" data-command="stop">정지</button>
+              <button data-target="boar" data-command="reset">초기화</button>
+            </div>
+            <label>
+              조정 분
+              <input data-seconds="boar" type="number" min="1" value="5" />
+            </label>
+            <div class="button-row">
+              <button data-target="boar" data-adjust="add">추가</button>
+              <button data-target="boar" data-adjust="subtract">감소</button>
+            </div>
+          </article>
+
+          <article class="timer-card" data-timer="pig">
+            <div class="timer-card-head">
+              <strong>돼지</strong>
+              <span data-status>STOP</span>
+            </div>
+            <div class="timer-number" data-time>00:00</div>
+            <div class="button-row">
+              <button data-target="pig" data-command="start">시작</button>
+              <button data-target="pig" data-command="stop">정지</button>
+              <button data-target="pig" data-command="reset">초기화</button>
+            </div>
+            <label>
+              조정 분
+              <input data-seconds="pig" type="number" min="1" value="5" />
+            </label>
+            <div class="button-row">
+              <button data-target="pig" data-adjust="add">추가</button>
+              <button data-target="pig" data-adjust="subtract">감소</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel test">
+        <h2>테스트 후원 실행</h2>
+        <form data-test-form>
+          <label>
+            후원 금액
+            <input name="amount" type="number" min="1" value="3900" />
+          </label>
+          <button type="submit">실행</button>
+        </form>
+        <p class="test-output" data-test-output>결과가 여기에 표시됩니다.</p>
+      </section>
+
+      <section class="panel logs">
+        <div class="panel-title-row">
+          <h2>최근 룰렛 결과</h2>
+          <button type="button" class="ghost" data-clear-results>로그 초기화</button>
+        </div>
+        <ul data-admin-logs></ul>
+      </section>
+
+      <section class="panel overlay-config">
+        <div class="section-head">
+          <div>
+            <h2>오버레이 설정</h2>
+            <p>OBS 화면 왼쪽 상단에 놓기 좋은 얇고 긴 바 형태로 조절합니다.</p>
+          </div>
+          <button type="button" data-save-overlay>오버레이 저장</button>
+        </div>
+        <div class="overlay-fields">
+          <label>
+            가로 길이
+            <span class="unit-input">
+              <input data-overlay-width type="number" min="480" max="1400" step="10" />
+              <span>px</span>
+            </span>
+          </label>
+          <label>
+            세로 높이
+            <span class="unit-input">
+              <input data-overlay-height type="number" min="58" max="180" step="2" />
+              <span>px</span>
+            </span>
+          </label>
+          <label>
+            배경 투명도
+            <span class="unit-input">
+              <input data-overlay-opacity type="number" min="35" max="100" step="1" />
+              <span>%</span>
+            </span>
+          </label>
+          <label>
+            글자 크기
+            <span class="unit-input">
+              <input data-overlay-font-scale type="number" min="70" max="140" step="5" />
+              <span>%</span>
+            </span>
+          </label>
+          <label class="check-row">
+            <input data-overlay-recent-open type="checkbox" />
+            최근 룰렛을 기본으로 펼치기
+          </label>
+        </div>
+        <p class="config-status" data-overlay-status>오버레이 설정을 불러오는 중입니다.</p>
+      </section>
+
+      <section class="panel config">
+        <div class="section-head">
+          <div>
+            <h2>확률표 편집</h2>
+            <p>후원 금액마다 어떤 결과가 나올지 정하고, 저장 후 테스트 후원으로 확인합니다.</p>
+          </div>
+          <button type="button" data-add-rule>금액 추가</button>
+        </div>
+
+        <div class="help-box">
+          <strong>입력 도움말</strong>
+          <span><b>화면 표시 문구</b>: 룰렛 결과와 최근 로그에 보이는 이름입니다. 예: 멧돼지 +10분</span>
+          <span><b>확률 비중</b>: 숫자가 클수록 더 잘 뽑힙니다. 같은 표 안에서 50과 50이면 반반, 70과 30이면 7:3입니다.</span>
+          <span><b>적용 시간</b>: 타이머에 더하거나 뺄 시간이며 분 단위로 입력합니다.</span>
+        </div>
+
+        <div class="config-status" data-config-status>확률표를 불러오는 중입니다.</div>
+        <div class="rule-list" data-rule-list></div>
+      </section>
+    </main>
+
+    <template id="rule-template">
+      <article class="rule-card" data-rule-card>
+        <div class="rule-card-head">
+          <div>
+            <strong data-rule-title>룰렛</strong>
+            <span data-rule-summary></span>
+          </div>
+          <div class="rule-actions">
+            <button type="button" data-add-item>결과 추가</button>
+            <button type="button" data-save-rule>저장</button>
+            <button type="button" class="danger" data-delete-rule>삭제</button>
+          </div>
+        </div>
+
+        <div class="rule-fields">
+          <label>
+            후원 금액
+            <input data-rule-amount type="number" min="1" />
+          </label>
+          <label>
+            룰렛 이름
+            <input data-rule-name type="text" />
+          </label>
+          <label>
+            뽑기 횟수
+            <input data-rule-rolls type="number" min="1" max="100" />
+          </label>
+        </div>
+
+        <div class="item-header">
+          <span>화면 표시 문구</span>
+          <span>확률 비중</span>
+          <span>대상</span>
+          <span>동작</span>
+          <span>적용 시간</span>
+          <span></span>
+        </div>
+        <div class="item-list" data-item-list></div>
+      </article>
+    </template>
+
+    <template id="item-template">
+      <div class="item-row" data-item-row>
+        <input data-item-label type="text" placeholder="예: 멧돼지 +10분" />
+        <label class="unit-input">
+          <input data-item-weight type="number" min="0.01" step="0.01" />
+          <span>%</span>
+        </label>
+        <select data-item-target>
+          <option value="boar">멧돼지</option>
+          <option value="pig">돼지</option>
+        </select>
+        <select data-item-action>
+          <option value="add">증가</option>
+          <option value="subtract">감소</option>
+        </select>
+        <label class="unit-input">
+          <input data-item-minutes type="number" min="0" step="1" />
+          <span>분</span>
+        </label>
+        <button type="button" class="ghost danger" data-remove-item>삭제</button>
+      </div>
+    </template>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/client.js"></script>
+  </body>
+</html>

@@ -1,0 +1,372 @@
+/*
+  ChatGPT Soft Dark Theme
+  The selectors below avoid generated class names where possible.
+  Theme activation is controlled by attributes added to <html> from content.js.
+*/
+
+:root[data-chatgpt-soft-dark-enabled="true"][data-chatgpt-soft-dark-theme="soft"] {
+  --cgpt-bg-base: #202124;
+  --cgpt-surface-base: #232529;
+  --cgpt-surface-2-base: #27292d;
+  --cgpt-sidebar-base: #202124;
+  --cgpt-sidebar-selected-base: #292b30;
+  --cgpt-input-base: #31343a;
+  --cgpt-code-base: #25272b;
+  --cgpt-code-header-base: #2a2c31;
+  --cgpt-border-base: #30333a;
+  --cgpt-border-soft-base: #2a2d33;
+  --cgpt-text-base: #d3d7dd;
+  --cgpt-code-text-base: #dce0e6;
+  --cgpt-text-muted-base: #9fa6b0;
+  --cgpt-hover-base: #2d3035;
+  --cgpt-accent-base: #97aae2;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"][data-chatgpt-soft-dark-theme="gray"] {
+  --cgpt-bg-base: #242526;
+  --cgpt-surface-base: #282a2c;
+  --cgpt-surface-2-base: #2e3033;
+  --cgpt-sidebar-base: #222325;
+  --cgpt-sidebar-selected-base: #303236;
+  --cgpt-input-base: #31343a;
+  --cgpt-code-base: #2b2d30;
+  --cgpt-code-header-base: #303236;
+  --cgpt-border-base: #3a3d43;
+  --cgpt-border-soft-base: #33363b;
+  --cgpt-text-base: #d9dce0;
+  --cgpt-code-text-base: #e0e2e5;
+  --cgpt-text-muted-base: #abb1b9;
+  --cgpt-hover-base: #36393e;
+  --cgpt-accent-base: #9ab4d0;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"][data-chatgpt-soft-dark-theme="warm"] {
+  --cgpt-bg-base: #252320;
+  --cgpt-surface-base: #2a2724;
+  --cgpt-surface-2-base: #302c28;
+  --cgpt-sidebar-base: #22201e;
+  --cgpt-sidebar-selected-base: #302c28;
+  --cgpt-input-base: #34302b;
+  --cgpt-code-base: #2d2925;
+  --cgpt-code-header-base: #332e29;
+  --cgpt-border-base: #3b362f;
+  --cgpt-border-soft-base: #332f2a;
+  --cgpt-text-base: #ded7ce;
+  --cgpt-code-text-base: #e6ded4;
+  --cgpt-text-muted-base: #b9afa5;
+  --cgpt-hover-base: #38332e;
+  --cgpt-accent-base: #d0aa76;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] {
+  color-scheme: dark !important;
+  --cgpt-intensity-lighten: 0%;
+  --cgpt-intensity-darken: 0%;
+  --cgpt-intensity-border-lighten: 0%;
+  --cgpt-intensity-border-darken: 0%;
+  --cgpt-intensity-text-lighten: 0%;
+  --cgpt-intensity-text-darken: 0%;
+  --cgpt-intensity-muted-lighten: 0%;
+  --cgpt-intensity-muted-darken: 0%;
+  --cgpt-bg: color-mix(in srgb, color-mix(in srgb, var(--cgpt-bg-base), #000 var(--cgpt-intensity-darken)), #fff var(--cgpt-intensity-lighten));
+  --cgpt-surface: color-mix(in srgb, color-mix(in srgb, var(--cgpt-surface-base), #000 var(--cgpt-intensity-darken)), #fff var(--cgpt-intensity-lighten));
+  --cgpt-surface-2: color-mix(in srgb, color-mix(in srgb, var(--cgpt-surface-2-base), #000 var(--cgpt-intensity-darken)), #fff var(--cgpt-intensity-lighten));
+  --cgpt-sidebar: color-mix(in srgb, color-mix(in srgb, var(--cgpt-sidebar-base), #000 var(--cgpt-intensity-darken)), #fff var(--cgpt-intensity-lighten));
+  --cgpt-sidebar-selected: color-mix(in srgb, color-mix(in srgb, var(--cgpt-sidebar-selected-base), #000 var(--cgpt-intensity-darken)), #fff var(--cgpt-intensity-lighten));
+  --cgpt-input: color-mix(in srgb, color-mix(in srgb, var(--cgpt-input-base), #000 var(--cgpt-intensity-darken)), #fff var(--cgpt-intensity-lighten));
+  --cgpt-code: color-mix(in srgb, color-mix(in srgb, var(--cgpt-code-base), #000 var(--cgpt-intensity-darken)), #fff var(--cgpt-intensity-lighten));
+  --cgpt-code-header: color-mix(in srgb, color-mix(in srgb, var(--cgpt-code-header-base), #000 var(--cgpt-intensity-darken)), #fff var(--cgpt-intensity-lighten));
+  --cgpt-border: color-mix(in srgb, color-mix(in srgb, var(--cgpt-border-base), #000 var(--cgpt-intensity-border-darken)), #fff var(--cgpt-intensity-border-lighten));
+  --cgpt-border-soft: color-mix(in srgb, color-mix(in srgb, var(--cgpt-border-soft-base), #000 var(--cgpt-intensity-border-darken)), #fff var(--cgpt-intensity-border-lighten));
+  --cgpt-text: color-mix(in srgb, color-mix(in srgb, var(--cgpt-text-base), #000 var(--cgpt-intensity-text-darken)), #fff var(--cgpt-intensity-text-lighten));
+  --cgpt-code-text: color-mix(in srgb, color-mix(in srgb, var(--cgpt-code-text-base), #000 var(--cgpt-intensity-text-darken)), #fff var(--cgpt-intensity-text-lighten));
+  --cgpt-text-muted: color-mix(in srgb, color-mix(in srgb, var(--cgpt-text-muted-base), #000 var(--cgpt-intensity-muted-darken)), #fff var(--cgpt-intensity-muted-lighten));
+  --cgpt-hover: color-mix(in srgb, color-mix(in srgb, var(--cgpt-hover-base), #000 var(--cgpt-intensity-darken)), #fff var(--cgpt-intensity-lighten));
+  --cgpt-accent: color-mix(in srgb, var(--cgpt-accent-base), #fff var(--cgpt-intensity-text-lighten));
+  background: var(--cgpt-bg) !important;
+  --main-surface-primary: var(--cgpt-bg) !important;
+  --main-surface-secondary: var(--cgpt-surface) !important;
+  --main-surface-tertiary: var(--cgpt-surface-2) !important;
+  --sidebar-surface-primary: var(--cgpt-sidebar) !important;
+  --sidebar-surface-secondary: var(--cgpt-sidebar-selected) !important;
+  --sidebar-surface-tertiary: var(--cgpt-surface-2) !important;
+  --message-surface: var(--cgpt-surface-2) !important;
+  --text-primary: var(--cgpt-text) !important;
+  --text-secondary: var(--cgpt-text-muted) !important;
+  --text-tertiary: var(--cgpt-text-muted) !important;
+  --border-light: var(--cgpt-border-soft) !important;
+  --border-medium: var(--cgpt-border) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] body,
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="dark"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-theme] {
+  background-color: var(--cgpt-bg) !important;
+  color: var(--cgpt-text) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] #__next,
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-token-main-surface-primary"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-token-main-surface-secondary"] {
+  background-color: var(--cgpt-bg) !important;
+  color: var(--cgpt-text) !important;
+}
+
+/* Replace very dark utility backgrounds with softer surfaces. */
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-black"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-[#000"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-[black"],
+:root[data-chatgpt-soft-dark-enabled="true"] [style*="background-color: rgb(0, 0, 0)"],
+:root[data-chatgpt-soft-dark-enabled="true"] [style*="background-color:#000"],
+:root[data-chatgpt-soft-dark-enabled="true"] [style*="background-color: #000"] {
+  background-color: var(--cgpt-surface) !important;
+}
+
+/* Main conversation layout */
+:root[data-chatgpt-soft-dark-enabled="true"] main,
+:root[data-chatgpt-soft-dark-enabled="true"] [role="main"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="conversation"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="thread"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="thread"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="conversation"],
+:root[data-chatgpt-soft-dark-enabled="true"] .prose {
+  background-color: var(--cgpt-surface) !important;
+  color: var(--cgpt-text) !important;
+}
+
+/* Sidebar and navigation areas */
+:root[data-chatgpt-soft-dark-enabled="true"] aside,
+:root[data-chatgpt-soft-dark-enabled="true"] nav,
+:root[data-chatgpt-soft-dark-enabled="true"] [role="navigation"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="sidebar"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-token-sidebar-surface-primary"] {
+  background-color: var(--cgpt-sidebar) !important;
+  color: var(--cgpt-text) !important;
+  border-color: var(--cgpt-border-soft) !important;
+}
+
+/* Softer selected and active sidebar rows. */
+:root[data-chatgpt-soft-dark-enabled="true"] aside a[aria-current="page"],
+:root[data-chatgpt-soft-dark-enabled="true"] aside [aria-current="page"],
+:root[data-chatgpt-soft-dark-enabled="true"] nav a[aria-current="page"],
+:root[data-chatgpt-soft-dark-enabled="true"] nav [aria-current="page"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="sidebar"] a[aria-current="page"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="sidebar"] [aria-current="page"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="sidebar"] [data-active="true"],
+:root[data-chatgpt-soft-dark-enabled="true"] aside [aria-pressed="true"],
+:root[data-chatgpt-soft-dark-enabled="true"] nav [aria-pressed="true"],
+:root[data-chatgpt-soft-dark-enabled="true"] aside [class*="bg-token-sidebar-surface-secondary"],
+:root[data-chatgpt-soft-dark-enabled="true"] nav [class*="bg-token-sidebar-surface-secondary"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="history"] [class*="bg-token-sidebar-surface-secondary"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="conversation-turn"] [data-active="true"] {
+  background-color: var(--cgpt-sidebar-selected) !important;
+  color: var(--cgpt-text) !important;
+  box-shadow: none !important;
+}
+
+/* Text inputs, menus, and panels */
+:root[data-chatgpt-soft-dark-enabled="true"] textarea,
+:root[data-chatgpt-soft-dark-enabled="true"] input,
+:root[data-chatgpt-soft-dark-enabled="true"] [contenteditable="true"],
+:root[data-chatgpt-soft-dark-enabled="true"] [role="textbox"],
+:root[data-chatgpt-soft-dark-enabled="true"] [role="dialog"],
+:root[data-chatgpt-soft-dark-enabled="true"] [role="menu"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="prompt"] {
+  background-color: var(--cgpt-input) !important;
+  color: var(--cgpt-text) !important;
+  border-color: var(--cgpt-border) !important;
+  box-shadow: none !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-token-main-surface-tertiary"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-token-message-surface"] {
+  background-color: var(--cgpt-surface-2) !important;
+}
+
+/* Message blocks and generic surfaces */
+:root[data-chatgpt-soft-dark-enabled="true"] article,
+:root[data-chatgpt-soft-dark-enabled="true"] section,
+:root[data-chatgpt-soft-dark-enabled="true"] table,
+:root[data-chatgpt-soft-dark-enabled="true"] th,
+:root[data-chatgpt-soft-dark-enabled="true"] td,
+:root[data-chatgpt-soft-dark-enabled="true"] [role="article"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-message-author-role],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="message"] {
+  background-color: transparent !important;
+  color: var(--cgpt-text) !important;
+  border-color: var(--cgpt-border-soft) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] table,
+:root[data-chatgpt-soft-dark-enabled="true"] th,
+:root[data-chatgpt-soft-dark-enabled="true"] td {
+  border-color: color-mix(in srgb, var(--cgpt-border-soft) 78%, transparent) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] pre,
+:root[data-chatgpt-soft-dark-enabled="true"] pre *,
+:root[data-chatgpt-soft-dark-enabled="true"] code {
+  background-color: var(--cgpt-code) !important;
+  color: var(--cgpt-code-text) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-token-text-primary"] pre,
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-token-main-surface-tertiary"] pre,
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="code"] {
+  background-color: var(--cgpt-code) !important;
+  color: var(--cgpt-code-text) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] pre {
+  border: 1px solid color-mix(in srgb, var(--cgpt-border-soft) 72%, transparent) !important;
+  border-radius: 10px !important;
+  box-shadow: none !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] div:has(> pre) {
+  background-color: var(--cgpt-code) !important;
+  border-color: color-mix(in srgb, var(--cgpt-border-soft) 70%, transparent) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] div:has(> pre) > div:first-child,
+:root[data-chatgpt-soft-dark-enabled="true"] div:has(> pre) button,
+:root[data-chatgpt-soft-dark-enabled="true"] pre button {
+  background-color: var(--cgpt-code-header) !important;
+  color: var(--cgpt-text-muted) !important;
+  border-color: color-mix(in srgb, var(--cgpt-border-soft) 65%, transparent) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] div:has(> pre) button:hover,
+:root[data-chatgpt-soft-dark-enabled="true"] pre button:hover {
+  background-color: var(--cgpt-hover) !important;
+  color: var(--cgpt-text) !important;
+}
+
+/* ChatGPT often uses bottom sticky gradients around the composer. */
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="sticky"][class*="bottom"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="fixed"][class*="bottom"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="absolute"][class*="bottom-0"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-gradient"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="bg-linear"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="from-black"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="via-black"],
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="to-black"] {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Smooth the area around the question composer without making it pure black. */
+:root[data-chatgpt-soft-dark-enabled="true"] body:has(textarea) [class*="sticky"][class*="bottom"],
+:root[data-chatgpt-soft-dark-enabled="true"] body:has(textarea) [class*="fixed"][class*="bottom"],
+:root[data-chatgpt-soft-dark-enabled="true"] body:has([data-testid*="composer"]) [class*="sticky"][class*="bottom"],
+:root[data-chatgpt-soft-dark-enabled="true"] body:has([data-testid*="composer"]) [class*="fixed"][class*="bottom"] {
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--cgpt-bg) 96%, transparent) 0%,
+    color-mix(in srgb, var(--cgpt-bg) 62%, transparent) 58%,
+    transparent 100%
+  ) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="sticky"][class*="bottom"]::before,
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="sticky"][class*="bottom"]::after,
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="fixed"][class*="bottom"]::before,
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="fixed"][class*="bottom"]::after,
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="absolute"][class*="bottom-0"]::before,
+:root[data-chatgpt-soft-dark-enabled="true"] [class*="absolute"][class*="bottom-0"]::after {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] form,
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="composer"] {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] form:has(textarea) > div,
+:root[data-chatgpt-soft-dark-enabled="true"] form:has([contenteditable="true"]) > div,
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="composer"] > div {
+  background-color: var(--cgpt-input) !important;
+  border: 1px solid var(--cgpt-border-soft) !important;
+  border-radius: 28px !important;
+  box-shadow: 0 12px 30px color-mix(in srgb, #000 12%, transparent) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] form:has(textarea) textarea,
+:root[data-chatgpt-soft-dark-enabled="true"] form:has([contenteditable="true"]) [contenteditable="true"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="composer"] textarea,
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="composer"] [contenteditable="true"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="composer"] [role="textbox"] {
+  background-color: transparent !important;
+  color: var(--cgpt-text) !important;
+  box-shadow: none !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] form:has(textarea) button,
+:root[data-chatgpt-soft-dark-enabled="true"] form:has([contenteditable="true"]) button,
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="composer"] button {
+  background-color: color-mix(in srgb, var(--cgpt-surface-2) 72%, var(--cgpt-input) 28%) !important;
+  border-color: var(--cgpt-border-soft) !important;
+}
+
+/* Reduce stark white/black contrast from nested UI pieces. */
+:root[data-chatgpt-soft-dark-enabled="true"] button,
+:root[data-chatgpt-soft-dark-enabled="true"] a,
+:root[data-chatgpt-soft-dark-enabled="true"] p,
+:root[data-chatgpt-soft-dark-enabled="true"] span,
+:root[data-chatgpt-soft-dark-enabled="true"] li,
+:root[data-chatgpt-soft-dark-enabled="true"] h1,
+:root[data-chatgpt-soft-dark-enabled="true"] h2,
+:root[data-chatgpt-soft-dark-enabled="true"] h3,
+:root[data-chatgpt-soft-dark-enabled="true"] h4 {
+  color: inherit !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] small,
+:root[data-chatgpt-soft-dark-enabled="true"] time,
+:root[data-chatgpt-soft-dark-enabled="true"] label,
+:root[data-chatgpt-soft-dark-enabled="true"] [aria-label],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="hint"],
+:root[data-chatgpt-soft-dark-enabled="true"] [data-testid*="subtitle"] {
+  color: var(--cgpt-text-muted) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] a {
+  color: var(--cgpt-accent) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] button:hover,
+:root[data-chatgpt-soft-dark-enabled="true"] a:hover,
+:root[data-chatgpt-soft-dark-enabled="true"] [role="button"]:hover,
+:root[data-chatgpt-soft-dark-enabled="true"] [role="menuitem"]:hover {
+  background-color: var(--cgpt-hover) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] ::selection {
+  background-color: color-mix(in srgb, var(--cgpt-accent) 35%, transparent) !important;
+  color: var(--cgpt-text) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] ::placeholder {
+  color: var(--cgpt-text-muted) !important;
+  opacity: 1 !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] hr,
+:root[data-chatgpt-soft-dark-enabled="true"] [role="separator"] {
+  border-color: var(--cgpt-border-soft) !important;
+}
+
+:root[data-chatgpt-soft-dark-enabled="true"] svg {
+  color: var(--cgpt-text-muted) !important;
+}
+
+/* Keep media readable without forcing images into the dark palette. */
+:root[data-chatgpt-soft-dark-enabled="true"] img,
+:root[data-chatgpt-soft-dark-enabled="true"] video,
+:root[data-chatgpt-soft-dark-enabled="true"] canvas {
+  background-color: transparent !important;
+}

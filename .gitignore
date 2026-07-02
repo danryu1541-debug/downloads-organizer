@@ -1,3 +1,17 @@
 __pycache__/
 *.py[cod]
 DownloadsOrganizer.log
+node_modules/
+.env
+chzzk-chat-speed-meter/data/
+
+# 아래 폴더들은 자체 git 저장소로 따로 관리 중이라 이 저장소에서는 제외합니다.
+/chzzk-chat-speed-meter/
+/chzzk-command-bot/
+/chzzk-openapi-chatbot/
+/pig-timer-repo/
+/pinball-penalty-picker/
+/weflab-roulette-timer/
+
+# 실행 중 자동 생성되는 상태 파일 (예시 파일만 추적)
+chzzk-roulette-timer-overlay/state.json

@@ -1,0 +1,8 @@
+{
+  "timers": {
+    "boar": { "remainingSeconds": 0, "running": false, "updatedAt": null },
+    "pig": { "remainingSeconds": 0, "running": false, "updatedAt": null }
+  },
+  "recentResults": [],
+  "processedEvents": []
+}

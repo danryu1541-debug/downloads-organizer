@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Soft Dark Theme",
+  "version": "1.0.0",
+  "description": "A softer dark theme for chatgpt.com with adjustable brightness presets.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://chatgpt.com/*"],
+  "action": {
+    "default_title": "ChatGPT Soft Dark Theme",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://chatgpt.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["styles.css"],
+      "matches": ["https://chatgpt.com/*"]
+    }
+  ]
+}

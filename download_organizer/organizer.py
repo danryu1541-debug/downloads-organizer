@@ -2,9 +2,15 @@ from __future__ import annotations
 
 import logging
 import shutil
+import time
 from pathlib import Path
 
-from .config import CATEGORIES, STABLE_CHECKS_REQUIRED
+from .config import (
+    CATEGORIES,
+    MINIMUM_FILE_AGE_SECONDS,
+    MINIMUM_FOLDER_AGE_SECONDS,
+    STABLE_CHECKS_REQUIRED,
+)
 from .file_state import (
     get_accessible_directory_signature,
     get_accessible_file_size,
@@ -51,6 +57,10 @@ class DownloadOrganizer:
             return
 
         try:
+            if not self.is_old_enough(path, MINIMUM_FILE_AGE_SECONDS):
+                self.observed_files.pop(path, None)
+                return
+
             category = get_category_for_file(path)
             target_dir = self.downloads_folder / category
 
@@ -87,6 +97,10 @@ class DownloadOrganizer:
             return
 
         try:
+            if not self.is_old_enough(path, MINIMUM_FOLDER_AGE_SECONDS):
+                self.observed_folders.pop(path, None)
+                return
+
             target_dir = self.downloads_folder / "Others"
             signature = get_accessible_directory_signature(path)
             if signature is None:
@@ -110,3 +124,10 @@ class DownloadOrganizer:
             self.logger.info("Moved folder '%s' to '%s'", path, destination)
         except Exception:
             self.logger.exception("Failed to process folder '%s'", path)
+
+    @staticmethod
+    def is_old_enough(path: Path, minimum_age_seconds: int) -> bool:
+        try:
+            return time.time() - path.stat().st_mtime >= minimum_age_seconds
+        except OSError:
+            return False

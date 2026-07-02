@@ -14,10 +14,10 @@ CATEGORIES: dict[str, set[str]] = {
 
 TEMP_EXTENSIONS = {"crdownload", "part", "tmp"}
 
-POLL_INTERVAL_SECONDS = 2
-STABLE_CHECK_INTERVAL_SECONDS = 2
+POLL_INTERVAL_SECONDS = 300
 STABLE_CHECKS_REQUIRED = 3
+MINIMUM_FILE_AGE_SECONDS = 30 * 60
+MINIMUM_FOLDER_AGE_SECONDS = 30 * 60
 
 APP_NAME = "DownloadsOrganizer"
 LOG_FILE = Path.home() / "DownloadsOrganizer.log"
-

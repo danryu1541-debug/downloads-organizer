@@ -29,7 +29,10 @@ def main() -> None:
         downloads_folder = get_downloads_folder()
         organizer = DownloadOrganizer(downloads_folder, logger)
         for _ in range(STABLE_CHECKS_REQUIRED + 1):
-            organizer.scan_once()
+            try:
+                organizer.scan_once()
+            except Exception:
+                logger.exception("Unexpected scan error")
             time.sleep(POLL_INTERVAL_SECONDS)
     elif args.command == "startup-enable":
         enable_startup()

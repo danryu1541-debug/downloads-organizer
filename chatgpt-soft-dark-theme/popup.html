@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ChatGPT Soft Dark Theme</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #202124;
+        --panel: #27292d;
+        --panel-hover: #2d3035;
+        --border: #34373d;
+        --border-soft: #2c2f34;
+        --text: #d8dbe0;
+        --muted: #a8aeb7;
+        --accent: #9aaee8;
+        --accent-soft: #30394f;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 292px;
+        margin: 0;
+        padding: 14px;
+        background: var(--bg);
+        color: var(--text);
+        font: 14px/1.45 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      h1 {
+        margin: 0 0 10px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--text);
+      }
+
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+
+      .label {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+
+      .switch {
+        position: relative;
+        display: inline-flex;
+        width: 46px;
+        height: 26px;
+      }
+
+      .switch input {
+        position: absolute;
+        opacity: 0;
+      }
+
+      .slider {
+        width: 100%;
+        border: 1px solid var(--border-soft);
+        border-radius: 999px;
+        background: #2a2c30;
+        cursor: pointer;
+        transition: background 160ms ease;
+      }
+
+      .slider::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #b9bec7;
+        transition: transform 160ms ease;
+      }
+
+      input:checked + .slider {
+        background: var(--accent-soft);
+        border-color: color-mix(in srgb, var(--accent) 42%, var(--border));
+      }
+
+      input:checked + .slider::before {
+        transform: translateX(20px);
+        background: var(--accent);
+      }
+
+      .theme-list {
+        display: grid;
+        gap: 7px;
+      }
+
+      .theme-option {
+        display: grid;
+        grid-template-columns: 18px 1fr;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 10px;
+        border: 1px solid var(--border-soft);
+        border-radius: 8px;
+        background: var(--panel);
+        cursor: pointer;
+        transition: background 140ms ease, border-color 140ms ease;
+      }
+
+      .theme-option:hover {
+        background: var(--panel-hover);
+      }
+
+      .theme-option:has(input:checked) {
+        background: color-mix(in srgb, var(--panel) 76%, var(--accent-soft));
+        border-color: color-mix(in srgb, var(--accent) 35%, var(--border));
+      }
+
+      .theme-option input {
+        margin: 0;
+        accent-color: var(--accent);
+      }
+
+      .theme-option span {
+        font-weight: 600;
+      }
+
+      .intensity {
+        margin-top: 14px;
+        padding: 10px;
+        border: 1px solid var(--border-soft);
+        border-radius: 8px;
+        background: var(--panel);
+      }
+
+      .intensity-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .intensity-head strong {
+        color: var(--text);
+        font-size: 13px;
+      }
+
+      .intensity-slider {
+        width: 100%;
+        height: 4px;
+        margin: 8px 0 2px;
+        accent-color: var(--accent);
+        cursor: pointer;
+      }
+
+      .intensity-scale {
+        display: flex;
+        justify-content: space-between;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .status {
+        min-height: 18px;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ChatGPT Soft Dark</h1>
+
+    <div class="row">
+      <div>
+        <strong>테마 사용</strong>
+        <div class="label">chatgpt.com에서만 적용됩니다.</div>
+      </div>
+      <label class="switch" title="테마 켜기 또는 끄기">
+        <input id="enabled" type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+
+    <label class="label">프리셋</label>
+    <div class="theme-list" role="radiogroup" aria-label="프리셋">
+      <label class="theme-option">
+        <input type="radio" name="theme" value="deep">
+        <span>Deep Dark</span>
+      </label>
+      <label class="theme-option">
+        <input type="radio" name="theme" value="soft">
+        <span>Soft Dark</span>
+      </label>
+      <label class="theme-option">
+        <input type="radio" name="theme" value="light">
+        <span>Light Dark</span>
+      </label>
+      <label class="theme-option">
+        <input type="radio" name="theme" value="warm">
+        <span>Warm Dark</span>
+      </label>
+      <label class="theme-option">
+        <input type="radio" name="theme" value="gray">
+        <span>Gray Dark</span>
+      </label>
+    </div>
+
+    <div class="intensity">
+      <div class="intensity-head">
+        <strong id="intensityLabel">Intensity: 50</strong>
+        <span>어둡게 / 밝게</span>
+      </div>
+      <input
+        id="intensity"
+        class="intensity-slider"
+        type="range"
+        min="0"
+        max="100"
+        step="1"
+        value="50"
+        aria-labelledby="intensityLabel"
+      >
+      <div class="intensity-scale" aria-hidden="true">
+        <span>0</span>
+        <span>50</span>
+        <span>100</span>
+      </div>
+    </div>
+
+    <div id="status" class="status" aria-live="polite"></div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
